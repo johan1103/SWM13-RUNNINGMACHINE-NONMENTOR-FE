@@ -14,97 +14,130 @@
 </head>
 
 <body>
-    <div style="display: flex;">
-        <h1>
+
+    <div style="display: flex; border-bottom: solid 3px black;">
+        <h1 style="text-align:center; margin: 10px 10px 10px 30px;
+    border: 20px; padding-top: 15px;">
             NMT
         </h1>
-        <ul class="nav">
+        <ul class="nav" style="margin : 32px 70px 20px 70px">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Active</a>
+                <a class="nav-link active" aria-current="page" href="#">문제 풀이</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">실전 테스트</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-    </div>
-    <div style="margin : 30px">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
-            </li>
-            <li class="nav-item" style="padding-left: 10px;">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">마이페이지</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
             </li>
         </ul>
     </div>
-    <div style="margin : 20px; display:flex; margin-bottom: 5px;">
-        <h2>
-            고려대학교 22/인문
-        </h2>
-    </div>
-    <div style="height: 3px; margin : 5px 15px 5px 15px; background-color: gray;">
-    </div>
-
-
-    <div style="margin: 20px; margin-top: 70px">
-        <h4>
-            문제
-        </h4>
-        <div style="height: 3px; width: 70px;margin : 5px 0px 5px 0px; background-color: #0d6efd;">
+    <div class="container" style="margin-left: auto; margin-right: auto;">
+        <div style="margin : 30px; margin-left: 1%;">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">고려대학교 22/인문</a>
+                </li>
+                <li class="nav-item" style="padding-left: 10px;">
+                    <a class="nav-link" href="#">제출</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">푼 사람</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">채점 현황</a>
+                </li>
+            </ul>
         </div>
-    </div>   
-
-
-    <div style="margin: 20px; text-align: center;">
-        <div style="margin: 20px; width: 703px; height: 703px;  background-color: #d9d9d9; text-align: center;">
-
+        <div style="margin : 20px; display:flex; margin-bottom: 5px; margin-left: 1%;">
+            <h2>
+                고려대학교 22/인문
+            </h2>
         </div>
-    </div>
+        <div style="height: 3px; margin : 5px 15px 5px 1%; background-color: gray;">
+        </div>
 
-    <!------------------------ 예제용 코드  ----------------------->
-    <div style="display:flex;">
-        <!-- Optional JavaScript; choose one of the two! -->
-        <div class="card" style="width: 18rem;">
-            <img src="https://picsum.photos/250/250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <table class="table" id="problem-info" style="margin-right: 1%; margin-left: 1%;
+        width: 98%;">
+            <thead>
+                <tr>
+                    <th style="width:16%;">권장 분량</th>
+                    <th style="width:17%;">제출</th>
+                    <th style="width:17%;">맞힌 사람</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 초 </td>
+                    <td>256 MB</td>
+                    <td>17437</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin: 20px; margin-top: 70px;margin-left: 1%;">
+            <h4>
+                논제
+            </h4>
+            <div style="height: 3px; width: 70px;margin : 5px 0px 5px 0px; background-color: #0d6efd;">
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
-            <img src="https://picsum.photos/250/250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div style="margin: 20px;">
+            <div style="margin: auto; width: 703px; background-color: #d9d9d9;">
+                ㉡을 ㉣의 관점에서 비판하고, ㉢의 근거를 (다)를 바탕으로 서술한 후, ㉤의 차원에서 ㉠을 평가하시오. (700~800자)
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Featured
+
+        <div style="margin: 20px; margin-top: 70px;margin-left: 1%;">
+            <h4>
+                문제
+            </h4>
+            <div style="height: 3px; width: 70px;margin : 5px 0px 5px 0px; background-color: #0d6efd;">
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+        <div style="margin: 20px; text-align: center;">
+            <div style="margin: auto; width: 703px; height: 703px;  background-color: #d9d9d9;">
+            </div>
+        </div>
+
+        <!------------------------ 예제용 코드  ----------------------->
+        <div style="display:flex;">
+            <!-- Optional JavaScript; choose one of the two! -->
+            <div class="card" style="width: 18rem;">
+                <img src="https://picsum.photos/250/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://picsum.photos/250/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Featured
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
