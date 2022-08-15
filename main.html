@@ -11,6 +11,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+        <style>
+            #wrap {
+                min-height: 35vh;
+                position: relative;
+                width: 100%;
+            }
+    
+            footer {
+                width: 100%;
+                height: 110px;
+                /* 내용물에 따라 알맞는 값 설정 */
+                bottom: 0px;
+                position: absolute;
+            }
+        </style>
 </head>
 
 <body>
@@ -130,42 +145,21 @@
             </div>
         </div>
     </div>
-    <!------------------------ 예제용 코드  ----------------------->
-    <div style="display:flex;">
-        <!-- Optional JavaScript; choose one of the two! -->
-        <div class="card" style="width: 18rem;">
-            <img src="https://picsum.photos/250/250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                    of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="https://picsum.photos/250/250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                    of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
+    <!-- footer 작성 -->
+    <div id='wrap' style="background-color: #e9e9e9; margin-top: 20%;">
+        <section>
+            <!-- 대충 뭐 요소들이 가득차있음 -->
+        </section>
+        <footer>
+            <nav>
+                <a href='https://github.com/johan1103' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>저자 : 김태형</span><br />
+                <span>이메일 : johan1103@naver.com</span><br />
+                <span>johan1103 2022. johan1103. All Rights Reserved.</span>
+            </p>
+        </footer>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
