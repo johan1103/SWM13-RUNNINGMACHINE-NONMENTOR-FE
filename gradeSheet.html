@@ -25,6 +25,9 @@
             bottom: 0px;
             position: absolute;
         }
+        .special-font{
+            font-weight: 900; font-size: larger; color: #0076C0;
+        }
     </style>
 </head>
 
@@ -110,13 +113,28 @@
         </div>
         <!-- 성적 차트 블럭-->
         <div style="display: flex;">
-            <div style="width: 350px; margin:auto">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-                <canvas id="radar-chart" width="250px" height="250px"></canvas>
+            <div style="margin: auto;">
+                <div style="width: 350px;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                    <canvas id="radar-chart" width="250px" height="250px"></canvas>
+                </div>
+                <div style="text-align: center;">
+                    <span class="special-font">황태호</span>
+                    님의 상세 성적표
+                </div>
             </div>
-            <div style="width: 350px; margin:auto">
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-                <canvas id="bar-chart" width="300" height="230"></canvas>
+            <div style="margin:auto">
+                <div style="width: 350px;">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                    <canvas id="bar-chart" width="300" height="230"></canvas>
+                </div>
+                <div style="text-align: center">
+                    <span class="special-font">황태호</span>
+                    님의 성적은
+                    <span class="special-font">상위</span>
+                    <span class="special-font">11</span>
+                    <span class="special-font">%</span>입니다.
+                </div>
             </div>
         </div>
 
@@ -151,11 +169,11 @@
                         <tr>
                             <td class="tit">추리</td>
                             <td class="rating">
-                                <span class="blind">별점 3점</span>
+                                <span class="blind">A</span>
                             </td>
                             <td class="per">100%</td>
                             <td class="text" style="text-align:left">
-                                <strong>김태형님이 가장 잘하는 것은
+                                <strong><span>황태호</span> 님이 가장 잘하는 것은
                                     추리입니다.</strong>
                                 <p>복잡한 상황과 전제를 정확히 파악하고, 비판적 사고와 추론 과정을 통해 주장의 진위 여부 혹은 오류를 판단할 수 있는 능력주어진 사실들을 조합하여 새로운
                                     가설을 만들고, 스스로 검증할 수 있는 능력</p>
@@ -164,7 +182,7 @@
                         <tr style="background-color: #eaeaea;">
                             <td class="tit">공간</td>
                             <td class="rating">
-                                <span class="blind">별점 3점</span>
+                                <span class="blind">A</span>
                             </td>
                             <td class="per">96%</td>
                             <td class="text" style="text-align:left">
@@ -175,7 +193,7 @@
                         <tr>
                             <td class="tit">수리</td>
                             <td class="rating">
-                                <span class="blind">별점 3점</span>
+                                <span class="blind">B</span>
                             </td>
                             <td class="per">91%</td>
                             <td class="text" style="text-align:left">
@@ -186,7 +204,7 @@
                         <tr style="background-color: #eaeaea;">
                             <td class="tit">언어</td>
                             <td class="rating">
-                                <span class="blind">별점 3점</span>
+                                <span class="blind">D</span>
                             </td>
                             <td class="per">55%</td>
                             <td class="text" style="text-align:left">
@@ -292,7 +310,7 @@
         </div>
 
         <!-- 돌아가기 버튼 -->
-        <div style="width: 10%; margin-left: 90%; margin-top: 50px; border-radius: 3px;
+        <div id = "backward-btn"style="width: 10%; margin-left: 90%; margin-top: 50px; border-radius: 3px;
         background-color: #0076C0; color: white; text-align: center; padding: 5px;">
             돌아가기
         </div>
@@ -323,13 +341,21 @@
 </body>
 
 <script>
+
+
+    const $backward_btn = document.getElementById('backward-btn');
+
+    $backward_btn.addEventListener('click',function(){
+       window.location.href="main.html"; 
+    });
+
     new Chart(document.getElementById("radar-chart"), {
         type: 'radar',
         data: {
             labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
             datasets: [
                 {
-                    label: "1950",
+                    label: "평균",
                     fill: true,
                     backgroundColor: "rgba(179,181,198,0.2)",
                     borderColor: "rgba(179,181,198,1)",
@@ -337,12 +363,12 @@
                     pointBackgroundColor: "rgba(179,181,198,1)",
                     data: [8.77, 55.61, 21.69, 6.62, 6.82]
                 }, {
-                    label: "2050",
+                    label: "본인",
                     fill: true,
-                    backgroundColor: "rgba(255,99,132,0.2)",
-                    borderColor: "rgba(255,99,132,1)",
+                    backgroundColor: "rgba(0, 118, 192,0.2)",
+                    borderColor: "rgba(0, 118, 192,1)",
                     pointBorderColor: "#fff",
-                    pointBackgroundColor: "rgba(255,99,132,1)",
+                    pointBackgroundColor: "rgba(0, 118, 192,1)",
                     pointBorderColor: "#fff",
                     data: [25.48, 54.16, 7.61, 8.06, 4.45]
                 }
@@ -356,14 +382,19 @@
         }
     });
     new Chart(document.getElementById("bar-chart"), {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
             datasets: [
                 {
                     label: "Population (millions)",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                    data: [2478, 5267, 734, 784, 433]
+                    //backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                    borderColor: '#0076C0',
+                    backgroundColor: 'rgba(185, 225, 250,0.5)',
+                    data: [2478, 5267, 734, 500, 100],
+
+                    drawActiveElementsOnTop : true,
+                    indexAxis:2,
                 }
             ]
         },
