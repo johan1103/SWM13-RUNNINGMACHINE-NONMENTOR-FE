@@ -128,11 +128,15 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
                     <canvas id="bar-chart" width="300" height="230"></canvas>
                 </div>
+                <div style="text-align: center; border-bottom: 1px solid #0076C0; width: 30%; margin: auto;">
+                    <span>성적 </span>
+                    <span class="special-font"> B </span>
+                </div>
                 <div style="text-align: center">
                     <span class="special-font">황태호</span>
                     님의 성적은
                     <span class="special-font">상위</span>
-                    <span class="special-font">11</span>
+                    <span class="special-font">21</span>
                     <span class="special-font">%</span>입니다.
                 </div>
             </div>
@@ -352,7 +356,7 @@
     new Chart(document.getElementById("radar-chart"), {
         type: 'radar',
         data: {
-            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            labels: ["어휘력", "문장력", "단락구성력", "핵심 키워드", "모범답안 유사도"],
             datasets: [
                 {
                     label: "평균",
@@ -384,14 +388,14 @@
     new Chart(document.getElementById("bar-chart"), {
         type: 'line',
         data: {
-            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            labels: ["E", "D", "C", "B", "A"],
             datasets: [
                 {
                     label: "Population (millions)",
                     //backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
                     borderColor: '#0076C0',
                     backgroundColor: 'rgba(185, 225, 250,0.5)',
-                    data: [2478, 5267, 734, 500, 100],
+                    data: [478, 2295, 4010, 2478, 1200],
 
                     drawActiveElementsOnTop : true,
                     indexAxis:2,
