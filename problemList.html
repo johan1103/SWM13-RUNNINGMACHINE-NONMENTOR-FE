@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        #wrap {
+            min-height: 35vh;
+            position: relative;
+            width: 100%;
+        }
+
+        footer {
+            width: 100%;
+            height: 110px;
+            /* 내용물에 따라 알맞는 값 설정 */
+            bottom: 0px;
+            position: absolute;
+        }
+
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        svg {
+
+            width: 1rem;
+            height: 1rem;
+            color: rgb(0, 120, 255);
+        }
+
+        /* 문제 리스트 표 설정값 */
+        tr>th {
+            padding: 7px;
+        }
+        tr>td {
+            padding: 7px;
+        }
+        tr{
+            border-bottom: 0.0625rem solid rgb(215, 226, 235);
+        }
+
+        .status {
+
+            width: 3.75rem;
+            text-align: center;
+        }
+
+        .level {
+            text-align: center;
+        }
+
+        .level-2 {
+            color: rgb(71, 200, 76);
+        }
+
+        .level-1 {
+            color: rgb(27, 186, 255);
+        }
+
+        .finished-count {
+            text-align: center;
+        }
+
+        .acceptance-rate {
+            text-align: center;
+        }
+
+
+        .part-title {
+
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 0.0625rem;
+            font-size: 0.75rem;
+            color: rgb(120, 144, 160);
+            line-height: 150%;
+        }
+
+        .title {
+
+            font-size: 1rem;
+            line-height: 150%;
+            letter-spacing: -0.009em;
+            color: rgb(0, 0, 0);
+        }
+
+        .pagination-btn button {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 3px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex; border-bottom: solid 2px black;">
+        <h1 style="text-align:center; margin: 10px 10px 10px 30px;
+    border: 20px; padding-top: 15px;">
+            NMT
+        </h1>
+        <ul class="nav" style="margin : 32px 0px 0px 70px">
+            <li class="nav-item" style="border-bottom: solid 3px blue;">
+                <a class="nav-link active" aria-current="page" href="#">문제 풀이</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">실전 테스트</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">마이페이지</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container" style="margin-left: auto; margin-right: auto;">
+        <!-- 문제 제목 -->
+        <div style="margin : 20px; display:flex; margin-bottom: 5px; margin-left: 1%;">
+            <h2>
+                문제 목록
+            </h2>
+        </div>
+        <div style="height: 3px; margin : 5px 15px 5px 1%; background-color: gray;">
+        </div>
+
+        <!-- 옵션 검색 블럭-->
+        <div class="option-box" style="position: relative; background-color: #e9e9e9;margin-top : 50px;
+            margin-left: 5%;margin-right: 5%; text-align: center; display: inline-block; width: 90%;">
+            <div style="display:flex; margin-top: 5%; margin-bottom: 5%;">
+                <div style="width: 20%; margin: auto;">유형 선택</div>
+                <div style="width: 20%; margin: auto;">학교 선택</div>
+            </div>
+            <div style="width: 20%;margin: auto; margin-top: 5%; margin-bottom: 5%;">출제 년도</div>
+            <div style="width:13%; height:35px; margin-left:80%; padding: 6px; border-radius: 12px; background-color: #0076C0;
+             margin-top: 5%; margin-bottom: 5%; color: white;">
+                검색
+            </div>
+        </div>
+
+        <!-- 문제 리스트 블럭-->
+        <div>
+            <div class="problem-block" style="margin-top: 50px;">
+
+                <table class="ChallengesTablestyle__Table-sc-wt0ety-2 AHXna" style="width: 80%; margin: auto;">
+                    <thead style=" border-top: solid 2px black; text-align: center; border-bottom: solid 1px #eaeaea;">
+                        <tr>
+                            <th class="status">상태</th>
+                            <th class="title">제목</th>
+                            <th class="level">난이도</th>
+                            <th class="finished-count">완료한 사람</th>
+                            <th class="acceptance-rate">정답률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="status"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 16 16" width="1.875rem" height="1.875rem">
+                                    <path fill-rule="evenodd"
+                                        d="M1.6 7.314 0 8.914l5.257 5.257L15.543 3.886l-1.6-1.6-8.686 8.685L1.6 7.314Z"
+                                        clip-rule="evenodd"></path>
+                                </svg></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/59406">동물 수 구하기<small
+                                        class="part-title">SUM, MAX, MIN</small></a></td>
+                            <td class="level"><span class="level-2">Lv. 2</span></td>
+                            <td class="finished-count">42,741명</td>
+                            <td class="acceptance-rate">96%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 16 16" width="1.875rem" height="1.875rem">
+                                    <path fill-rule="evenodd"
+                                        d="M1.6 7.314 0 8.914l5.257 5.257L15.543 3.886l-1.6-1.6-8.686 8.685L1.6 7.314Z"
+                                        clip-rule="evenodd"></path>
+                                </svg></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/59407">이름이 있는 동물의 아이디<small
+                                        class="part-title">IS NULL</small></a></td>
+                            <td class="level"><span class="level-1">Lv. 1</span></td>
+                            <td class="finished-count">33,107명</td>
+                            <td class="acceptance-rate">96%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 16 16" width="1.875rem" height="1.875rem">
+                                    <path fill-rule="evenodd"
+                                        d="M1.6 7.314 0 8.914l5.257 5.257L15.543 3.886l-1.6-1.6-8.686 8.685L1.6 7.314Z"
+                                        clip-rule="evenodd"></path>
+                                </svg></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/59403">동물의 아이디와 이름<small
+                                        class="part-title">SELECT</small></a></td>
+                            <td class="level"><span class="level-1">Lv. 1</span></td>
+                            <td class="finished-count">44,387명</td>
+                            <td class="acceptance-rate">95%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 16 16" width="1.875rem" height="1.875rem">
+                                    <path fill-rule="evenodd"
+                                        d="M1.6 7.314 0 8.914l5.257 5.257L15.543 3.886l-1.6-1.6-8.686 8.685L1.6 7.314Z"
+                                        clip-rule="evenodd"></path>
+                                </svg></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/87389">나머지가 1이 되는 수 찾기<small
+                                        class="part-title">월간 코드 챌린지 시즌3</small></a></td>
+                            <td class="level"><span class="level-1">Lv. 1</span></td>
+                            <td class="finished-count">14,735명</td>
+                            <td class="acceptance-rate">95%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/59408">중복 제거하기<small
+                                        class="part-title">SUM, MAX, MIN</small></a></td>
+                            <td class="level"><span class="level-2">Lv. 2</span></td>
+                            <td class="finished-count">41,611명</td>
+                            <td class="acceptance-rate">95%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 16 16" width="1.875rem" height="1.875rem">
+                                    <path fill-rule="evenodd"
+                                        d="M1.6 7.314 0 8.914l5.257 5.257L15.543 3.886l-1.6-1.6-8.686 8.685L1.6 7.314Z"
+                                        clip-rule="evenodd"></path>
+                                </svg></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/59404">여러 기준으로 정렬하기<small
+                                        class="part-title">SELECT</small></a></td>
+                            <td class="level"><span class="level-1">Lv. 1</span></td>
+                            <td class="finished-count">42,862명</td>
+                            <td class="acceptance-rate">94%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    viewBox="0 0 16 16" width="1.875rem" height="1.875rem">
+                                    <path fill-rule="evenodd"
+                                        d="M1.6 7.314 0 8.914l5.257 5.257L15.543 3.886l-1.6-1.6-8.686 8.685L1.6 7.314Z"
+                                        clip-rule="evenodd"></path>
+                                </svg></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/59040">고양이와 개는 몇 마리 있을까<small
+                                        class="part-title">GROUP BY</small></a></td>
+                            <td class="level"><span class="level-2">Lv. 2</span></td>
+                            <td class="finished-count">43,492명</td>
+                            <td class="acceptance-rate">90%</td>
+                        </tr>
+                        <tr>
+                            <td class="status"></td>
+                            <td class="title"><a href="/learn/courses/30/lessons/12931">자릿수 더하기<small
+                                        class="part-title">연습문제</small></a></td>
+                            <td class="level"><span class="level-1">Lv. 1</span></td>
+                            <td class="finished-count">31,346명</td>
+                            <td class="acceptance-rate">89%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <!-- 페이지네이션 블럭-->
+        <div style="margin: auto; width: 50%; text-align: center; margin-top: 30px; ">
+            <button aria-label="이전 페이지" disabled=""></button>
+            <span class="pagination-btn">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+            </span>
+            <button class="PaginationNavstyle__Arrow-sc-1ye3koq-2 dRovVb next" aria-label="다음 페이지"></button>
+        </div>
+    </div>
+    <!-- footer 작성 -->
+    <div id='wrap' style="background-color: #e9e9e9; margin-top: 20%;">
+        <section>
+            <!-- 대충 뭐 요소들이 가득차있음 -->
+        </section>
+        <footer>
+            <nav>
+                <a href='https://github.com/johan1103' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>저자 : 김태형</span><br />
+                <span>이메일 : johan1103@naver.com</span><br />
+                <span>johan1103 2022. johan1103. All Rights Reserved.</span>
+            </p>
+        </footer>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    const $submit_btn = document.getElementById('submit-btn');
+
+    $submit_btn.addEventListener("click", function () {
+        runAjax();
+        //        window.location.href = 'gradeSheet.html';
+    });
+    function runAjax() {
+        let httpRequest = new XMLHttpRequest();
+        let textContent = document.getElementById('text-content').value;
+        httpRequest.onreadystatechange = function () {
+            // 서버의 응답에 따른 로직을 여기에 작성합니다.
+        };
+        httpRequest.open('POST', '127.0.0.1:8080/submit', true);
+        httpRequest.setRequestHeader('Content-Type', 'application/json');
+        httpRequest.send(JSON.stringify(textContent));
+    }
+</script>
+
+
+</html>
