@@ -6,11 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         #wrap {
             min-height: 35vh;
@@ -78,6 +89,175 @@
         </div>
 
 
+        <!--
+        <div class="option-box" style="position:relative; background-color: #e9e9e9;margin-top : 50px;
+            margin-left: 1%;margin-right: 20px; text-align: center;">
+            <div style="width: 70%;margin: auto; padding-top: 5%; margin-bottom: 5%;">
+                <div>
+                    <h4>
+                        출제 년도
+                    </h4>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="width: 100%;">
+                            Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" style="width: 100%;">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-top: 2%;padding-bottom: 2%;">
+                <div style="width:13%; height:35px; margin-left:80%; padding: 6px; border-radius: 12px; background-color: #0076C0;
+             color: white;">
+                    검색
+                </div>
+            </div>
+        </div>
+        -->
+
+        <!-- 유저 성적표 개요 블럭-->
+        <div class="gradesheet-block" id="gradeSheet-btn" style="margin-left : 1%;margin-right : 20px;
+        display: flex; padding: 10px; background-color: #e9e9e9; margin-top: 20px;">
+            <div style="width: 20%; padding: 10px; background-color: white;">
+                유저 이미지
+            </div>
+            <div style="margin-left:3%; width: 70%; padding: 10px; background-color: white; height: auto;">
+                <div style="display: flex;">
+                    <div style="width: 25%;">분량</div>
+                    <div>259자</div>
+                </div>
+                <div>
+                    <div style="width:93%; margin: 5px;">
+                        <h6>총점</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" aria-label="Success example"
+                                style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;">
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>독해력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example"
+                                style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>논리력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-label="Danger example"
+                                style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>어휘력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" aria-label="Info example"
+                                style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 유저 성적표 개요 블럭-->
+        <div class="gradesheet-block" style="margin-left : 1%;margin-right : 20px;
+        display: flex; padding: 10px; background-color: #e9e9e9; margin-top: 20px;">
+            <div style="width: 20%; padding: 10px; background-color: white;">
+                유저 이미지
+            </div>
+            <div style="margin-left:3%; width: 70%; padding: 10px; background-color: white; height: auto;">
+                <div style="display: flex;">
+                    <div style="width: 25%;">분량</div>
+                    <div>259자</div>
+                </div>
+                <div>
+                    <div style="width:93%; margin: 5px;">
+                        <h6>총점</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" aria-label="Success example"
+                                style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;">
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>독해력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example"
+                                style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>논리력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-label="Danger example"
+                                style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>어휘력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" aria-label="Info example"
+                                style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 유저 성적표 개요 블럭-->
+        <div class="gradesheet-block" style="margin-left : 1%;margin-right : 20px;
+        display: flex; padding: 10px; background-color: #e9e9e9; margin-top: 20px;">
+            <div style="width: 20%; padding: 10px; background-color: white;">
+                유저 이미지
+            </div>
+            <div style="margin-left:3%; width: 70%; padding: 10px; background-color: white; height: auto;">
+                <div style="display: flex;">
+                    <div style="width: 25%;">분량</div>
+                    <div>259자</div>
+                </div>
+                <div>
+                    <div style="width:93%; margin: 5px;">
+                        <h6>총점</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" aria-label="Success example"
+                                style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;">
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>독해력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-label="Warning example"
+                                style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>논리력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-label="Danger example"
+                                style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div style="width: 30%; margin: 5px;">
+                        <h6>어휘력</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" aria-label="Info example"
+                                style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <!-- footer 작성 -->
     <div id='wrap' style="background-color: #e9e9e9; margin-top: 20%;">
@@ -95,56 +275,14 @@
             </p>
         </footer>
     </div>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
 </body>
 
 <script>
+    const $gradeSheet_btn = document.getElementById('gradeSheet-btn');
+    $gradeSheet_btn.addEventListener("click", function(){
+        window.location.href = 'gradeSheet.html';
+    })
 
-    const content = document.querySelector('.content');
-    const wing = document.querySelector('.wing');
-    const $wing2 = document.getElementsByClassName('wing2');
-    const $submit_btn = document.getElementById('submit-btn');
-
-
-    // 컨텐츠 영역부터 브라우저 최상단까지의 길이 구하기
-    const contentTop = content.getBoundingClientRect().top + window.scrollY;
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY >= contentTop) {
-            wing.classList.add('fixed');
-            $wing2[0].style.position = 'fixed';
-            $wing2[0].style.right = '115px';
-            $wing2[0].style.top = '8px';
-            if (window.scrollY > 1023) {
-                wing.classList.remove('fixed');
-                $wing2[0].style.position = 'absolute';
-                $wing2[0].style.right = '43px';
-                $wing2[0].style.top = '634px';
-            }
-        } else {
-            wing.classList.remove('fixed');
-            $wing2[0].style.position = 'absolute';
-            $wing2[0].style.right = '43px';
-            $wing2[0].style.top = '8px';
-        }
-    });
-    $submit_btn.addEventListener("click", function () {
-        runAjax();
-        //        window.location.href = 'gradeSheet.html';
-    });
-    function runAjax() {
-        let httpRequest = new XMLHttpRequest();
-        let textContent = document.getElementById('text-content').value;
-        httpRequest.onreadystatechange = function () {
-            // 서버의 응답에 따른 로직을 여기에 작성합니다.
-        };
-        httpRequest.open('POST', '127.0.0.1:8080/submit', true);
-        httpRequest.setRequestHeader('Content-Type', 'application/json');
-        httpRequest.send(JSON.stringify(textContent));
-    }
 </script>
 
 

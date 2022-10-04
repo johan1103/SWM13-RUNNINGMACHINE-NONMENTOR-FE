@@ -202,19 +202,8 @@
         }
     });
     $submit_btn.addEventListener("click", function () {
-        runAjax();
-//        window.location.href = 'gradeSheet.html';
+        window.location.href = 'gradeSheet.html';
     });
-    function runAjax(){
-        let httpRequest = new XMLHttpRequest();
-        let textContent = document.getElementById('text-content').value;
-        httpRequest.onreadystatechange = function () {
-            // 서버의 응답에 따른 로직을 여기에 작성합니다.
-        };
-        httpRequest.open('POST', '127.0.0.1:8080/submit', true);
-        httpRequest.setRequestHeader('Content-Type', 'application/json');
-        httpRequest.send(JSON.stringify(textContent));
-    }
 </script>
 
 
