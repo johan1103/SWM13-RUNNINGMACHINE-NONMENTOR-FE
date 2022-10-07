@@ -28,30 +28,57 @@
         .special-font{
             font-weight: 900; font-size: larger; color: #0076C0;
         }
+
+
+        .header {
+            display: flex;
+            border-bottom: solid 2px black;
+            padding-top: 30px;
+            height: 120px;
+            padding-bottom: 3px;
+        }
+
+        .header-logo {
+            width: 15%;
+            position: absolute;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .header-menu li {
+            width: 20%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div style="display: flex; border-bottom: solid 2px black;">
-        <h1 style="text-align:center; margin: 10px 10px 10px 30px;
-    border: 20px; padding-top: 15px;">
+    <div class="header-logo" style="height: 120px;">
+        <h1>
             NMT
         </h1>
-        <ul class="nav" style="margin : 32px 0px 0px 70px">
-            <li class="nav-item" style="border-bottom: solid 3px blue;">
-                <a class="nav-link active" aria-current="page" href="#">문제 풀이</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">실전 테스트</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">마이페이지</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li>
-        </ul>
+    </div>
+    <div class="header">
+        <div style="margin: auto; width: 63%;">
+            <ul class="nav header-menu">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="problemList.html">문제 풀이</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">실전 테스트</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">마이페이지</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="container" style="margin-left: auto; margin-right: auto;">
         <!-- 문제 제목 -->
